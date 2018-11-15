@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: e3cf6f54f0f78d34e9bc5c1593c749c0
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 256
+  forceTextureCase: -1
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: PixelText
+  fontNames:
+  - PixelText
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
