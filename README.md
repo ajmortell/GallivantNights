@@ -6,9 +6,14 @@ A cyber-horror thriller. An homage to games like Snatcher and Super Spy-hunter.
 We have added a small tech demo that allows you to use yarn to make animated panels along with your text/options.
 
 # To use simply..
-1.  Open the file in Assets/Scenes called DialogueScene
-2. Once in unity navigate to the folder structure and look in Assets/Prefabs/Animations/Scenes/...
+**1.**  Open the file in Assets/Scenes called DialogueScene
+**2.** Once in unity navigate to the folder structure and look in Assets/Prefabs/Animations/Scenes/...
+ 
  A) this is where the animated panels we have set up are located.
+ B) note they have an animated entity script attached that says what color their label is and what type and initial state they are.
+ C) These panels are loaded through the .yarn file via commands ([YarnCommand("MyCommand")]].
+ D) You can make any sized panel you chose these are the sizes we find fits our model best.
+
 3. Next load up yarn and find the scene_0.yarn file in the Assets/Yarnspinner/Dialogues folder and see how the commands are used
 4. Next we have the DialogueManager (Assets/Scripts/Dialogue) where most of the commands are located.
 5. Note how everything is hooked up to the Dialogue object in the hierarchy.
