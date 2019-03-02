@@ -3,8 +3,8 @@ A cyber-horror thriller. An homage to games like Snatcher and Super Spy-hunter.
 
 We have added a small tech demo that allows you to use yarn to make animated panels along with your text/options.
 
-To use simply..
-1. Open the file in Assets/Scenes called DialogueScene
+# To use simply..
+1.  Open the file in Assets/Scenes called DialogueScene
 2. Once in unity navigate to the folder structure and look in Assets/Prefabs/Animations/Scenes/...
   A) this is where the animated panels we have set up are located.
   B) note they have an animated entity script attached that says what color their label is and what type and initial state they are in
@@ -22,4 +22,4 @@ To use simply..
   A) this serves our purposes perfectly and we are now moving on to the second have of the gameplay.
 10. Everything else is standard yarn functionality most of which is in the the current yarnspinner tutorial demo.
 
-I hope you enjoy making animated text adventures and we hope this inspires or helps you with your own project.
+# I hope you enjoy making animated text adventures and we hope this inspires or helps you with your own project.
