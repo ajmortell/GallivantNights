@@ -1,7 +1,7 @@
 title: Start
 tags: 
 colorID: 0
-position: 157,201
+position: 156,201
 ---
 <<CreateEntity Dialogue Scenes/scene_0/scene_1 Description: s1A>>
 A cold black night.
@@ -10,7 +10,7 @@ An alley with plenty of space.
 <<CreateEntity Dialogue Scenes/scene_0/Jim_scene_1 Jim: jimS1A>>
 Heya kid.
 Heard you parted ways with yer lady friend.
-How ya holding uP?
+How ya holding up?
 ->TALK
 [[Jim_TALK_1]]
 ===
@@ -25,7 +25,7 @@ I'm ok.
 Shit sucks yo.
 <<ChangeEntityType Dialogue NPC>>
 <<ChangeSpeaker Dialogue Jim: ORANGE>>
-I here ya. Well, what can I do ya for?
+I hear ya. Well, what can I do ya for?
 ->TALK
     [[Jim_TALK_1]]
 ->HELP
@@ -40,7 +40,7 @@ position: 658,147
 ---
 <<ChangeEntityType Dialogue PLAYER>>
 <<ChangeSpeaker Dialogue Adam: LIME>>
-Are you every going to fix that hunk of scrap?
+Are you ever going to fix that hunk of scrap?
 Get some real tech?
 <<ChangeEntityType Dialogue NPC>>
 <<ChangeSpeaker Dialogue Jim: ORANGE>>

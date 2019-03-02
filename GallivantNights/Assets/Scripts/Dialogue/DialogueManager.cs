@@ -83,7 +83,7 @@ namespace Yarn.Unity.DialogueSystem {
         /// <param name="_file"></param>
         /// <param name="_type"></param>
         [YarnCommand("CreateEntity")]
-        public void CreatedEntity(string _file, string _speaker, string _id) {
+        public void CreateEntity(string _file, string _speaker, string _id) {
             speaker_label.GetComponent<Text>().text = _speaker;
             
             GameObject animated_fab_ = Resources.Load<GameObject>("Prefabs/Animations/" + _file);
