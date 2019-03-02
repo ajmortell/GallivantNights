@@ -19,7 +19,7 @@ We have added a small tech demo that allows you to use yarn to make animated pan
  → **D.)** You can make any sized panel you like. This size was found to be the best for our purposes.
 
 
-**3.** Next load up yarn and find the scene_0.yarn file in the Assets/Yarnspinner/Dialogues folder and see how the commands are used
+**3.** Next load up yarn, find the scene_0.yarn file in the Assets/Yarnspinner/Dialogues folder. Observe how commands are used
 
 **4.** Next we have the DialogueManager (Assets/Scripts/Dialogue) where most of the commands are located.
 
