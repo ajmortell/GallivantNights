@@ -8,15 +8,15 @@ We have added a small tech demo that allows you to use yarn to make animated pan
 ### To use simply..
 **1.**  Open the file in Assets/Scenes called DialogueScene
 
-**2.** Once in unity navigate to the folder structure and look in Assets/Prefabs/Animations/Scenes/...
+**1.** Once in unity navigate to the folder structure and look in Assets/Prefabs/Animations/Scenes/...
  
- → **A)** this is where the animated panels we have set up are located.
+ → **1.)** this is where the animated panels we have set up are located.
  
- → **B)** note there is an **AnimatedEntity** script attached to set a name, label color, type and initial state.
+ → **1.)** note there is an **AnimatedEntity** script attached to set a name, label color, type and initial state.
  
- → **C)** These panels are loaded through the .yarn file via commands ([YarnCommand("MyCommand")]].
+ → **1.)** These panels are loaded through the .yarn file via commands ([YarnCommand("MyCommand")]].
  
- → **D)** You can make any sized panel you like. This size was found to be the best for our purposes.
+ → **1.)** You can make any sized panel you like. This size was found to be the best for our purposes.
 
 
 **3.** Next load up yarn and find the scene_0.yarn file in the Assets/Yarnspinner/Dialogues folder and see how the commands are used
