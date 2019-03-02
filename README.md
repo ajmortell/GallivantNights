@@ -1,7 +1,8 @@
 # GallivantNights
 A cyber-horror thriller. An homage to games like Snatcher and Super Spy-hunter.
+
 # 
-# 
+ 
 We have added a small tech demo that allows you to use yarn to make animated panels along with your text/options.
 
 # To use simply..
