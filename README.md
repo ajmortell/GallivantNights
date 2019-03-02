@@ -12,11 +12,11 @@ We have added a small tech demo that allows you to use yarn to make animated pan
  
  → **A)** this is where the animated panels we have set up are located.
  
- → **B)** note they an animated entity script attached that says what color their label is and what type and initial state they are.
+ → **B)** note there is an **AnimatedEntity** script attached to set a name, label color, type and initial state.
  
  → **C)** These panels are loaded through the .yarn file via commands ([YarnCommand("MyCommand")]].
  
- → **D)** You can make any sized panel you chose these are the sizes we find fits our model best.
+ → **D)** You can make any sized panel you like. This size was found to be the best for our purposes.
 
 
 **3.** Next load up yarn and find the scene_0.yarn file in the Assets/Yarnspinner/Dialogues folder and see how the commands are used
