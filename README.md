@@ -42,4 +42,4 @@ We have added a small tech demo that allows you to use yarn to make animated pan
 
 **10.** Everything else is standard yarn functionality most of which is in the the current yarnspinner tutorial demo.
 
-## I hope you enjoy making animated text adventures and that this inspires or helps you with your own project. If you want to just look at it action build and run from unity into a standalone and there you have it. 
+##### I hope you enjoy making animated text adventures and that this inspires or helps you with your own project. If you want to just look at it action build and run from unity into a standalone and there you have it. 
