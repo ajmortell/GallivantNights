@@ -1,0 +1,64 @@
+title: Start
+tags: 
+colorID: 0
+position: 157,201
+---
+<<CreateEntity Dialogue Scenes/scene_0/scene_1 Description: s1A>>
+A cold black night.
+A clear white moon.
+An alley with plenty of space.
+<<CreateEntity Dialogue Scenes/scene_0/Jim_scene_1 Jim: jimS1A>>
+Heya kid.
+Heard you parted ways with yer lady friend.
+How ya holding uP?
+->TALK
+[[Jim_TALK_1]]
+===
+title: Jim_TALK_1
+tags: 
+colorID: 0
+position: 421,198
+---
+<<ChangeEntityType Dialogue PLAYER>>
+<<ChangeSpeaker Dialogue Adam: LIME>>
+I'm ok.
+Shit sucks yo.
+<<ChangeEntityType Dialogue NPC>>
+<<ChangeSpeaker Dialogue Jim: ORANGE>>
+I here ya. Well, what can I do ya for?
+->TALK
+    [[Jim_TALK_1]]
+->HELP
+    [[Jim_HELP_1]]
+->LEAVE
+    [[Jim_EXIT_1]]
+===
+title: Jim_HELP_1
+tags: 
+colorID: 0
+position: 658,147
+---
+<<ChangeEntityType Dialogue PLAYER>>
+<<ChangeSpeaker Dialogue Adam: LIME>>
+Are you every going to fix that hunk of scrap?
+Get some real tech?
+<<ChangeEntityType Dialogue NPC>>
+<<ChangeSpeaker Dialogue Jim: ORANGE>>
+HA! Get out a here with that.
+You know why I don't like A.I.
+<<ChangeEntityType Dialogue PLAYER>>
+<<ChangeSpeaker Dialogue Adam: LIME>>
+Yeah yeah.
+What's wrong with the unit today Jim?
+<<ChangeSpeaker Dialogue Jim: RED>>
+....
+===
+title: Jim_EXIT_1
+tags: 
+colorID: 0
+position: 657,402
+---
+<<ChangeEntityType Dialogue NPC>>
+<<ChangeSpeaker Dialogue Jim: ORANGE>>
+Taker er' easy fella.
+===

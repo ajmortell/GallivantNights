@@ -1,0 +1,61 @@
+title: JIM
+tags: 
+colorID: 0
+position: -475,502
+---
+<<SetEntity NPC Jim IDLE /jim_scene_1_idle_1>>
+[[ORIGIN]]
+===
+title: ORIGIN
+tags: 
+colorID: 0
+position: -253,503
+---
+<<SetEntity NPC Jim TALK /jim_scene_1_talk_1>>
+Heya kid.
+I heard you had some heartbreak with your lady friend. 
+Sorry to hear about that.
+How are you holding up?
+<<SetEntity NPC Jim IDLE /jim_scene_1_Idle_1>>
+[[Player_response_1]]
+===
+title: Player_response_1
+tags: 
+colorID: 0
+position: -32,503
+---
+I'm ok Jimbo.
+She took me off ALL of her networks.
+I can't even go near her or I will be arrested.
+[[Jim_retort_1]]
+===
+title: Jim_retort_1
+tags: 
+colorID: 0
+position: 189,502
+---
+Yeah that's rough boyo.
+Anyhoots...
+What can I do ya for?
+->TALK
+    [[Jim_talk_1]]
+->LOOK
+    [[Jim_look_1]]
+===
+title: Jim_talk_1
+tags: 
+colorID: 0
+position: 435,413
+---
+Jim are you ever going to fix that old bucket of scrap?
+===
+title: Jim_look_1
+tags: 
+colorID: 0
+position: 436,629
+---
+Jim is an old junker.
+He has been here at least as long as I have been alive.
+Since I was a kid i have been coming here to buy part at cheaper rates than the higher end stores.
+His parts may be cheaper but they are the best human engineered parts around.
+===
