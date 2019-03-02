@@ -30,7 +30,7 @@ namespace Yarn.Unity.DialogueSystem {
         private AnimatedEntity current_entity;
         private Animator current_entity_animator=null;
         private Yarn.OptionChooser SetSelectedOption;// Yarn delegate. Tells user what option was selected
-        private readonly float textSpeed = 0.00001f;
+        private readonly float textSpeed = 0.05f;
         private bool is_finished_talking = true;       
         private int char_counter = 0;
 
@@ -124,7 +124,7 @@ namespace Yarn.Unity.DialogueSystem {
                 foreach (char c in line.text) {
                     char_counter++;
                     
-                    yield return new WaitForSeconds(0.005f);
+                    yield return new WaitForSeconds(0.05f);
                     if (c == '.' || c == '?' || c == '!') {
                         string_builder_.Append(c);
                         line_text.text = string_builder_.ToString();

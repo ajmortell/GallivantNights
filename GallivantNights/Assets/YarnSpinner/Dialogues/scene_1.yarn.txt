@@ -4,9 +4,9 @@ colorID: 0
 position: 156,201
 ---
 <<CreateEntity Dialogue Scenes/scene_0/scene_1 Description: s1A>>
-A cold black night.
+A clear black night.
 A clear white moon.
-An alley with plenty of space.
+An alley, with plenty of space.
 <<CreateEntity Dialogue Scenes/scene_0/Jim_scene_1 Jim: jimS1A>>
 Heya kid.
 Heard you parted ways with yer lady friend.
@@ -20,7 +20,7 @@ colorID: 0
 position: 421,198
 ---
 <<ChangeEntityType Dialogue PLAYER>>
-<<ChangeSpeaker Dialogue Adam: LIME>>
+<<ChangeSpeaker Dialogue Adam: PURPLE>>
 I'm ok.
 Shit sucks yo.
 <<ChangeEntityType Dialogue NPC>>
@@ -39,15 +39,15 @@ colorID: 0
 position: 658,147
 ---
 <<ChangeEntityType Dialogue PLAYER>>
-<<ChangeSpeaker Dialogue Adam: LIME>>
+<<ChangeSpeaker Dialogue Adam: PURPLE>>
 Are you ever going to fix that hunk of scrap?
 Get some real tech?
 <<ChangeEntityType Dialogue NPC>>
 <<ChangeSpeaker Dialogue Jim: ORANGE>>
-HA! Get out a here with that.
-You know why I don't like A.I.
+HA! you make me laugh kid.
+You know I have isues with A.I.
 <<ChangeEntityType Dialogue PLAYER>>
-<<ChangeSpeaker Dialogue Adam: LIME>>
+<<ChangeSpeaker Dialogue Adam: PURPLE>>
 Yeah yeah.
 What's wrong with the unit today Jim?
 <<ChangeSpeaker Dialogue Jim: RED>>
