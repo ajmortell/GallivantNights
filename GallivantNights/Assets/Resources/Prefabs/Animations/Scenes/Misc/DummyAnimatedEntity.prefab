@@ -89,7 +89,7 @@ MonoBehaviour:
   entity_info:
     entity_name: DUMMY
     entity_type: 0
-    entity_state: 0
+    entity_state: 2
     speaker_color:
       serializedVersion: 2
       rgba: 4294967295

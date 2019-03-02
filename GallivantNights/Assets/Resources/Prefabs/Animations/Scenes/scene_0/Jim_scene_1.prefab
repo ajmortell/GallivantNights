@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 95737503316928288}
   - component: {fileID: 114504150822559942}
   m_Layer: 5
-  m_Name: Jim_scene_1_idle_1
+  m_Name: Jim_scene_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88,7 +88,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entity_info:
     entity_name: Jim
-    entity_type: 0
+    entity_type: 1
     entity_state: 2
     speaker_color:
       serializedVersion: 2
