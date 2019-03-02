@@ -25,7 +25,7 @@ We have added a small tech demo that allows you to use yarn to make animated pan
 
 **5.** Note how everything is hooked up to the Dialogue object in the hierarchy.
 
-**6.** Don't forget that each NPC scenes needs to be noted as an NPC in the AnimatedEntity script in the inspector.
+**6.** Don't forget that each NPC scene needs to be noted as an NPC in the AnimatedEntity script in the inspector.
  
  → **A)** This can be changed in code but it needs and initial setting.
  
@@ -33,7 +33,8 @@ We have added a small tech demo that allows you to use yarn to make animated pan
 **7.** Also remember that each NPC has states that must be added as parameters to transition in the animator.
 
  → **A)** isFinishedTalking is the param used for the Jim_scene_1 state transitions.
-
+ 
+ → **B)** the code watches for the text to complete then changes state automatically (in RunLine function).
 
 **8.** It is not perfect in its distilled form but it can be used to make whatever you want. 
 
