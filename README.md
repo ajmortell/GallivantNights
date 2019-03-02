@@ -10,9 +10,9 @@ We have added a small tech demo that allows you to use yarn to make animated pan
 
 **2.** Once in unity navigate to the folder structure and look in Assets/Prefabs/Animations/Scenes/...
  
-###### -> *A) this is where the animated panels we have set up are located.*
+###### -> *A) This is where the animated panels we have set up are located.*
  
-###### -> *B) note there is an **AnimatedEntity** script attached to set a name, label color, type and initial state.*
+###### -> *B) Note there is an **AnimatedEntity** script attached to set a name, label color, type and initial state.*
  
 ###### -> *C) These panels are loaded through the .yarn file via commands ([YarnCommand("MyCommand")]].*
  
