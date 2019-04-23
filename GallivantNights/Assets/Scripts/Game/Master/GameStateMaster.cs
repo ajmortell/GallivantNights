@@ -60,7 +60,6 @@ public class GameStateMaster : Singleton<GameStateMaster> {
         StartCoroutine(TransitionScene(4));
     }
 
-
     IEnumerator Quit() {
         yield return new WaitForSeconds(1.5f);
 #if UNITY_EDITOR
