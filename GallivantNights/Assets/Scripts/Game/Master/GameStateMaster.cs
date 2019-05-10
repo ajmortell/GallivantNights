@@ -21,8 +21,9 @@ public class GameStateMaster : Singleton<GameStateMaster> {
     private enum GameState { STARTUP = 0, TITLE = 1, DIALOGUE = 2, DRIVE = 3, MENU = 4, QUIT = 5 };
     private GameState game_state;
     private GameState current_game_state;
-    
-    private int lastScene;
+    private int menu_counter = 0;
+    private int last_scene = 0;
+    private bool can_open_menu = true;
 
     public override void Awake() {
         base.Awake();
@@ -153,6 +154,25 @@ public class GameStateMaster : Singleton<GameStateMaster> {
         //file.Close();
         //lastScene = data.SceneId;
         //}
+    }
+
+    public void CheckMenu() {
+        if (Input.GetKeyDown("m")) {
+
+            if (can_open_menu == true) {
+                can_open_menu = true;
+                Debug.Log("MENU OPEN");
+
+            } else {
+                can_open_menu = true;
+                Debug.Log("MENU CLOSED");
+            }
+        }
+
+    }
+
+    void FixedUpdate() {
+        CheckMenu();
     }
 
     void Update() {

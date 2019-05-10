@@ -61,6 +61,7 @@ public class VehicleController : MonoBehaviour {
             direction = Vector3.zero;
             gear = 1;
         }
+
     }
 
     void MoveCar() {
