@@ -258,9 +258,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1972409889}
   - {fileID: 708107929}
-  - {fileID: 1588784448}
   m_Father: {fileID: 407183298}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -280,6 +278,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5462eb2cafb8a104ca96e226de634380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fire_point: {fileID: 708107929}
+  bullet_prefab: {fileID: 1913159275050368, guid: 34b952bfb53ff7149949c3fc7881c37e,
+    type: 2}
+  weaponry: {fileID: 407183299}
   weapon_up:
   - {fileID: 21300052, guid: c05a254f5d2c72548830a703c7b875a1, type: 3}
   weapon_diag:
@@ -288,10 +290,11 @@ MonoBehaviour:
   - {fileID: 21300106, guid: c05a254f5d2c72548830a703c7b875a1, type: 3}
   weapon_active:
   - {fileID: 21300052, guid: c05a254f5d2c72548830a703c7b875a1, type: 3}
-  damage: 1
+  weapon_damage: 0
   max_ammo: 32
+  fire_rate: 0.48
   reload_speed: 3
-  firetype: singleshot
+  is_locked: 0
 --- !u!212 &70785832
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -731,6 +734,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5462eb2cafb8a104ca96e226de634380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fire_point: {fileID: 0}
+  bullet_prefab: {fileID: 0}
+  weaponry: {fileID: 407183299}
   weapon_up:
   - {fileID: 21300052, guid: c05a254f5d2c72548830a703c7b875a1, type: 3}
   weapon_diag:
@@ -739,10 +745,11 @@ MonoBehaviour:
   - {fileID: 21300052, guid: c05a254f5d2c72548830a703c7b875a1, type: 3}
   weapon_active:
   - {fileID: 21300052, guid: c05a254f5d2c72548830a703c7b875a1, type: 3}
-  damage: 16
+  weapon_damage: 0
   max_ammo: 1
+  fire_rate: 0.5
   reload_speed: 10
-  firetype: napalm
+  is_locked: 1
 --- !u!212 &279286902
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1074,9 +1081,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 374d95647dee3f548bb470a136fe63fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapons_menu_canvas: {fileID: 355107037}
-  weapons_menu_panel: {fileID: 148079760}
-  upgrades_menu_panel: {fileID: 1763581820}
 --- !u!114 &355107040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1300,6 +1304,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5462eb2cafb8a104ca96e226de634380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fire_point: {fileID: 0}
+  bullet_prefab: {fileID: 0}
+  weaponry: {fileID: 407183299}
   weapon_up:
   - {fileID: 21300070, guid: c05a254f5d2c72548830a703c7b875a1, type: 3}
   weapon_diag:
@@ -1308,10 +1315,11 @@ MonoBehaviour:
   - {fileID: 21300070, guid: c05a254f5d2c72548830a703c7b875a1, type: 3}
   weapon_active:
   - {fileID: 21300070, guid: c05a254f5d2c72548830a703c7b875a1, type: 3}
-  damage: 5
+  weapon_damage: 0
   max_ammo: 16
+  fire_rate: 0.5
   reload_speed: 6
-  firetype: burstshot
+  is_locked: 1
 --- !u!212 &512508081
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1408,6 +1416,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5462eb2cafb8a104ca96e226de634380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fire_point: {fileID: 0}
+  bullet_prefab: {fileID: 0}
+  weaponry: {fileID: 407183299}
   weapon_up:
   - {fileID: 21300052, guid: c05a254f5d2c72548830a703c7b875a1, type: 3}
   weapon_diag:
@@ -1416,10 +1427,11 @@ MonoBehaviour:
   - {fileID: 21300052, guid: c05a254f5d2c72548830a703c7b875a1, type: 3}
   weapon_active:
   - {fileID: 21300052, guid: c05a254f5d2c72548830a703c7b875a1, type: 3}
-  damage: 22
+  weapon_damage: 0
   max_ammo: 5
+  fire_rate: 0.5
   reload_speed: 9
-  firetype: grenade
+  is_locked: 1
 --- !u!212 &563727270
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1608,11 +1620,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 708107928}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 16, z: 0}
+  m_LocalPosition: {x: 0, y: 15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 70785830}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!210 &708107930
 SortingGroup:
@@ -1697,7 +1709,7 @@ RectTransform:
   m_GameObject: {fileID: 1000987850}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 407183298}
   m_Father: {fileID: 80651009}
@@ -2031,6 +2043,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5462eb2cafb8a104ca96e226de634380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fire_point: {fileID: 0}
+  bullet_prefab: {fileID: 0}
+  weaponry: {fileID: 407183299}
   weapon_up:
   - {fileID: 21300052, guid: c05a254f5d2c72548830a703c7b875a1, type: 3}
   weapon_diag:
@@ -2039,10 +2054,11 @@ MonoBehaviour:
   - {fileID: 21300052, guid: c05a254f5d2c72548830a703c7b875a1, type: 3}
   weapon_active:
   - {fileID: 21300052, guid: c05a254f5d2c72548830a703c7b875a1, type: 3}
-  damage: 2
+  weapon_damage: 0
   max_ammo: 100
+  fire_rate: 0.5
   reload_speed: 1
-  firetype: singleshot
+  is_locked: 1
 --- !u!212 &1097208494
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2455,6 +2471,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5462eb2cafb8a104ca96e226de634380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fire_point: {fileID: 0}
+  bullet_prefab: {fileID: 0}
+  weaponry: {fileID: 407183299}
   weapon_up:
   - {fileID: 21300052, guid: c05a254f5d2c72548830a703c7b875a1, type: 3}
   weapon_diag:
@@ -2463,10 +2482,11 @@ MonoBehaviour:
   - {fileID: 21300052, guid: c05a254f5d2c72548830a703c7b875a1, type: 3}
   weapon_active:
   - {fileID: 21300052, guid: c05a254f5d2c72548830a703c7b875a1, type: 3}
-  damage: 20
+  weapon_damage: 0
   max_ammo: 5
+  fire_rate: 0.5
   reload_speed: 8
-  firetype: shell
+  is_locked: 1
 --- !u!212 &1444351338
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2630,86 +2650,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1466519990}
   m_CullTransparentMesh: 0
---- !u!1 &1588784447
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1588784448}
-  - component: {fileID: 1588784449}
-  m_Layer: 5
-  m_Name: flash
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &1588784448
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1588784447}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 70785830}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 22}
-  m_SizeDelta: {x: 1, y: 1}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!212 &1588784449
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1588784447}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 3
-  m_Sprite: {fileID: 21300046, guid: c05a254f5d2c72548830a703c7b875a1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 8, y: 22}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!1 &1713397272
 GameObject:
   m_ObjectHideFlags: 0
@@ -3038,6 +2978,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5462eb2cafb8a104ca96e226de634380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fire_point: {fileID: 0}
+  bullet_prefab: {fileID: 0}
+  weaponry: {fileID: 407183299}
   weapon_up:
   - {fileID: 21300052, guid: c05a254f5d2c72548830a703c7b875a1, type: 3}
   weapon_diag:
@@ -3046,10 +2989,11 @@ MonoBehaviour:
   - {fileID: 21300052, guid: c05a254f5d2c72548830a703c7b875a1, type: 3}
   weapon_active:
   - {fileID: 21300052, guid: c05a254f5d2c72548830a703c7b875a1, type: 3}
-  damage: 0
+  weapon_damage: 0
   max_ammo: 100
+  fire_rate: 0.5
   reload_speed: 0
-  firetype: light
+  is_locked: 1
 --- !u!212 &1952678212
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3146,18 +3090,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5462eb2cafb8a104ca96e226de634380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fire_point: {fileID: 0}
+  bullet_prefab: {fileID: 0}
+  weaponry: {fileID: 407183299}
   weapon_up:
   - {fileID: 21300038, guid: c05a254f5d2c72548830a703c7b875a1, type: 3}
   weapon_diag:
-  - {fileID: 21300038, guid: c05a254f5d2c72548830a703c7b875a1, type: 3}
+  - {fileID: 21300094, guid: c05a254f5d2c72548830a703c7b875a1, type: 3}
   weapon_side:
-  - {fileID: 21300038, guid: c05a254f5d2c72548830a703c7b875a1, type: 3}
+  - {fileID: 21300110, guid: c05a254f5d2c72548830a703c7b875a1, type: 3}
   weapon_active:
   - {fileID: 21300038, guid: c05a254f5d2c72548830a703c7b875a1, type: 3}
-  damage: 2
+  weapon_damage: 0
   max_ammo: 64
+  fire_rate: 0.5
   reload_speed: 4
-  firetype: doubleshot
+  is_locked: 1
 --- !u!212 &1955821860
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3200,81 +3148,6 @@ SpriteRenderer:
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 24, y: 32}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!1 &1972409888
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1972409889}
-  - component: {fileID: 1972409890}
-  m_Layer: 0
-  m_Name: bullet_singlegun_1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1972409889
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1972409888}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 15, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 70785830}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1972409890
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1972409888}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 21300050, guid: c05a254f5d2c72548830a703c7b875a1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 2, y: 8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

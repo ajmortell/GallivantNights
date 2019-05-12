@@ -5,53 +5,53 @@ using UnityEngine;
 [System.Serializable]
 public class Weapon : MonoBehaviour {
 
+    public Transform fire_point;
+    public GameObject bullet_prefab;
+    
+    public Weaponry weaponry;
+
     public Sprite[] weapon_up, weapon_diag, weapon_side, weapon_active;
-    private GameObject weapon;
-    private Rigidbody2D weapon_body;
+    
     [SerializeField]
-    private float damage = 0.0f;
-    private int ammo = 0;
+    private float weapon_damage;
+    
+    private int ammo;
     [SerializeField]
-    private int max_ammo = 1;
+    private int max_ammo;
+    [SerializeField]
+    private float fire_rate = 0.5f;
     [SerializeField]
     private float reload_speed;
     [SerializeField]
-    private string firetype = "";
-    private bool isLocked = true;
-    private string current_ammo_type = "";
+    private bool is_locked = true;
+    private float next_fire;
     private Bullet bullet;
-
-    private void AmmoChanged() {
-        switch (weapon.name) {
-            case "singleshot":
-                break;
-            case "doubleshot":
-                break;
-            case "burstshot":
-                break;
-        }
-    }
-
-    void SwitchFireType() {
-        switch(firetype) {
-            case "singleshot":
-                break;
-            case "doubleshot":
-                break;
-            case "burstshot":
-                break;
-
-            default:
-                break;
-        }
-    }
-
+    
     private void Awake() {
-        weapon = gameObject;
-        weapon_body = weapon.GetComponent<Rigidbody2D>(); 
+
+        ammo = max_ammo;
+    }
+
+    void Fire() {
+
+        ammo--;
+        Debug.Log("Shooting Gun:  " + weapon_active);
+        Debug.Log("TRANSFORM DIRECTION:  " + bullet_prefab.GetComponent<Bullet>().transform_direction);
+        GameObject bullet_ = Instantiate(bullet_prefab, fire_point.position, fire_point.rotation);
+        bullet_.SetActive(false);
+        bullet = bullet_.GetComponent<Bullet>();
+        weapon_damage += bullet.bullet_damage_mod;
+        bullet.ChangeBulletDirection(transform.up);
+        bullet_.SetActive(true);
+        next_fire = Time.time + fire_rate;
     }
 
     void FixedUpdate() {
-       
+        Debug.Log("AMMO:  "+ammo);
+       if(Input.GetButtonDown("Fire1") && Time.time > next_fire && ammo!=0) {
+            Fire();
+        }
     }
+
+
 }

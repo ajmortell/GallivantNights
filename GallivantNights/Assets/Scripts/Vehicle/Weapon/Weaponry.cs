@@ -6,14 +6,14 @@ public class Weaponry : MonoBehaviour {
 
     public List<GameObject> weapons; // ALL POSSIBLE GAME WEAPONS ATTACHED TO VEHICLE OBJ
     private GameObject current_weapon; // THE CURRENTLY ACTIVE WEAPON ON VEHICLE OBJ 
-    private GameObject weapon; // THE INITIAL ACTIVE WEAPON
+    private GameObject previous_weapon; // PREVIOUS WEAPON
 
     void Awake () {
 		for(int i=0; i<weapons.Count; i++) {
             bool active = weapons[i].activeInHierarchy;
             if (active == true) {
-                weapon = weapons[i];
-                current_weapon = weapon;
+                current_weapon = weapons[i];
+                previous_weapon = current_weapon;
                 Debug.Log("INITIAL WEAPONRY ACTIVE: "+current_weapon.name);
             }
         }
@@ -24,28 +24,22 @@ public class Weaponry : MonoBehaviour {
         return obj_;
     }
 
-    private void WeaponChanged() {
-        switch (weapon.name) {
-            case "singlegun":
-                break;
-            case "doublegun":
-                break;
-            case "burstgun":
-                break;
-        }
+    public GameObject GetPrevioustWeapon() {
+        GameObject obj_ = previous_weapon;
+        return obj_;
+    }
+
+    public void ChangeWeapon(GameObject new_weapon) {
+        current_weapon = new_weapon;
     }
 
     private void CheckWeapon() {
-        if (current_weapon.name != weapon.name) {
-            Debug.Log("Game State Has Changed :: Previous:  " + current_weapon + " Current: " + weapon);
-            for (int i = 0; i < weapons.Count; i++) {
-                bool active = weapons[i].activeInHierarchy;
-                if (active == true) {
-                    current_weapon = weapons[i];
-                    Debug.Log("NEW WEAPON ACTIVE: " + current_weapon.name);
-                }
-            }
-            WeaponChanged();
+        Debug.Log("CURRENT WEAPON:  "+current_weapon);
+        if (current_weapon.name != previous_weapon.name) {
+            Debug.Log("** Weapon Has Changed :: CURRENT:  " + current_weapon + " PREVIOUS: " + previous_weapon);
+            previous_weapon = current_weapon;
+            Debug.Log("NEW WEAPON ACTIVE: " + current_weapon.name + "PREVIOUS:" + previous_weapon);
+
         }
     }
 

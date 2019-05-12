@@ -49,14 +49,16 @@ TextureImporter:
     21300088: grenadelauncher_fire_1
     21300090: playerSheet_512_0
     21300092: playerSheet_512_1
-    21300094: playerSheet_512_2
-    21300096: playerSheet_512_3
+    21300094: doubleshot_idle_diag_1
+    21300096: doubleshot_fire_diag_1
     21300098: playerSheet_512_4
     21300100: playerSheet_512_5
     21300102: singlegun_idle_diag_1
     21300104: singlegun_fire_diag_1
     21300106: singlegun_idle_right_1
     21300108: singlegun_fire_right_1
+    21300110: doubleshot_idle_right_1
+    21300112: doubleshot_fire_right_1
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -1070,7 +1072,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerSheet_512_2
+      name: doubleshot_idle_diag_1
       rect:
         serializedVersion: 2
         x: 176
@@ -1090,7 +1092,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerSheet_512_3
+      name: doubleshot_fire_diag_1
       rect:
         serializedVersion: 2
         x: 230
@@ -1225,6 +1227,46 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 7c0858f3199df3c4d80219d151100268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doubleshot_idle_right_1
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 160
+        width: 26
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cee2c2e553be2a74ba704f4ef7fd06e6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doubleshot_fire_right_1
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 120
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8b5f8746b6e2454baadf6596f5e152f
       vertices: []
       indices: 
       edges: []

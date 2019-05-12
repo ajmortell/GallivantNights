@@ -26,7 +26,7 @@ public class VehicleDisplayController : MonoBehaviour {
     
     void Awake() {
 
-        weaponry = weaponry_object.GetComponent<Weaponry>();
+        weaponry = weaponry_object.GetComponent<Weaponry>();//
         weaponry_object = weaponry.GetCurrentWeapon();
         Debug.Log("CURRENT WEAPON: " + weaponry_object.name);
 
@@ -35,7 +35,6 @@ public class VehicleDisplayController : MonoBehaviour {
 
         weapon_object = weaponry.GetCurrentWeapon();
         weapon = weapon_object.GetComponent<Weapon>();
-
 
         active = up;// TODO: set to previous facing direction 
         weapon.weapon_active = weapon.weapon_up;
