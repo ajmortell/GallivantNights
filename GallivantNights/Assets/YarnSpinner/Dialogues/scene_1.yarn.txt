@@ -1,8 +1,9 @@
 title: Start
 tags: 
 colorID: 0
-position: 156,201
+position: 155,202
 ---
+<<GoToScene Dialogue 3>>
 <<CreateEntity Dialogue Scenes/scene_0/scene_1 Description: s1A>>
 A clear black night.
 A clear white moon.
@@ -52,6 +53,7 @@ Yeah yeah.
 What's wrong with the unit today Jim?
 <<ChangeSpeaker Dialogue Jim: RED>>
 ....
+<<GoToScene Dialogue 3>>
 ===
 title: Jim_EXIT_1
 tags: 
@@ -61,4 +63,5 @@ position: 657,402
 <<ChangeEntityType Dialogue NPC>>
 <<ChangeSpeaker Dialogue Jim: ORANGE>>
 Taker er' easy fella.
+
 ===

@@ -2,14 +2,14 @@ fileFormatVersion: 2
 guid: c05a254f5d2c72548830a703c7b875a1
 TextureImporter:
   fileIDToRecycleName:
-    21300000: player_vehicle_idle_1
+    21300000: playervehicle_up_1
     21300002: playerSheet512_1
-    21300004: player_vehicle_diag_right_1
+    21300004: playervehicle_up_diag_1
     21300006: door_1
     21300008: door_2
     21300010: shot_napalm_2
     21300012: shot_napalm_3
-    21300014: player_vehicle_right_1
+    21300014: playervehicle_right_1
     21300016: shot_napalm_4
     21300018: door_3
     21300020: door_4
@@ -21,15 +21,15 @@ TextureImporter:
     21300032: door_7
     21300034: door_8
     21300036: effect_flamethrower_2
-    21300038: doubleshot_idle_1
-    21300040: doubleshot_fire_1
+    21300038: doubleshot_up_1
+    21300040: doubleshot_fire_up_1
     21300042: effect_flamethrower_1
     21300044: effect_doubleshot_fire_1
     21300046: effect_singlegun_fire_1
     21300048: shot_shell_1
     21300050: shot_singlegun_1
-    21300052: singlegun_idle_1
-    21300054: singlegun_fire_1
+    21300052: singlegun_up_1
+    21300054: singlegun_fire_up_1
     21300056: machinegun_idle_1
     21300058: machinegun_fire_1
     21300060: flamethrower_idle_1
@@ -37,8 +37,8 @@ TextureImporter:
     21300064: playerSheet512_32
     21300066: playerSheet512_33
     21300068: bomb_1
-    21300070: burstgun_idle_1
-    21300072: burstgun_fire_1
+    21300070: burstgun_up_1
+    21300072: burstgun_fire_up_1
     21300074: spotlight_1
     21300076: shot_burst_1
     21300078: shot_doubleshot_1
@@ -47,18 +47,21 @@ TextureImporter:
     21300084: pickup_nitrogen_1
     21300086: grenadelauncher_idle_1
     21300088: grenadelauncher_fire_1
-    21300090: playerSheet_512_0
-    21300092: playerSheet_512_1
-    21300094: doubleshot_idle_diag_1
-    21300096: doubleshot_fire_diag_1
+    21300090: burstgun_up_diag_1
+    21300092: burstgun_fire_up_diag_1
+    21300094: doubleshot_up_diag_1
+    21300096: doubleshot_fire_up_diag_1
     21300098: playerSheet_512_4
     21300100: playerSheet_512_5
-    21300102: singlegun_idle_diag_1
-    21300104: singlegun_fire_diag_1
-    21300106: singlegun_idle_right_1
+    21300102: singlegun_up_diag_1
+    21300104: singlegun_fire_up_diag_1
+    21300106: singlegun_right_1
     21300108: singlegun_fire_right_1
-    21300110: doubleshot_idle_right_1
+    21300110: doubleshot_right_1
     21300112: doubleshot_fire_right_1
+    21300114: burstgun_right_1
+    21300116: burstgun_fire_right_1
+    21300118: weapon_mount
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -152,13 +155,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: player_vehicle_idle_1
+      name: playervehicle_up_1
       rect:
         serializedVersion: 2
-        x: 8
-        y: 422
-        width: 52
-        height: 84
+        x: 7
+        y: 427
+        width: 53
+        height: 78
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,13 +175,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_vehicle_diag_right_1
+      name: playervehicle_up_diag_1
       rect:
         serializedVersion: 2
-        x: 88
-        y: 424
-        width: 78
-        height: 78
+        x: 90
+        y: 425
+        width: 77
+        height: 77
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -272,13 +275,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_vehicle_right_1
+      name: playervehicle_right_1
       rect:
         serializedVersion: 2
-        x: 198
-        y: 438
-        width: 84
-        height: 52
+        x: 202
+        y: 437
+        width: 78
+        height: 54
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -512,7 +515,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: doubleshot_idle_1
+      name: doubleshot_up_1
       rect:
         serializedVersion: 2
         x: 10
@@ -532,7 +535,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: doubleshot_fire_1
+      name: doubleshot_fire_up_1
       rect:
         serializedVersion: 2
         x: 50
@@ -652,7 +655,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: singlegun_idle_1
+      name: singlegun_up_1
       rect:
         serializedVersion: 2
         x: 10
@@ -672,7 +675,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: singlegun_fire_1
+      name: singlegun_fire_up_1
       rect:
         serializedVersion: 2
         x: 50
@@ -832,7 +835,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: burstgun_idle_1
+      name: burstgun_up_1
       rect:
         serializedVersion: 2
         x: 8
@@ -852,7 +855,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: burstgun_fire_1
+      name: burstgun_fire_up_1
       rect:
         serializedVersion: 2
         x: 48
@@ -1032,7 +1035,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerSheet_512_0
+      name: burstgun_up_diag_1
       rect:
         serializedVersion: 2
         x: 174
@@ -1052,7 +1055,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerSheet_512_1
+      name: burstgun_fire_up_diag_1
       rect:
         serializedVersion: 2
         x: 228
@@ -1072,7 +1075,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: doubleshot_idle_diag_1
+      name: doubleshot_up_diag_1
       rect:
         serializedVersion: 2
         x: 176
@@ -1092,7 +1095,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: doubleshot_fire_diag_1
+      name: doubleshot_fire_up_diag_1
       rect:
         serializedVersion: 2
         x: 230
@@ -1152,7 +1155,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: singlegun_idle_diag_1
+      name: singlegun_up_diag_1
       rect:
         serializedVersion: 2
         x: 280
@@ -1172,7 +1175,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: singlegun_fire_diag_1
+      name: singlegun_fire_up_diag_1
       rect:
         serializedVersion: 2
         x: 334
@@ -1192,7 +1195,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: singlegun_idle_right_1
+      name: singlegun_right_1
       rect:
         serializedVersion: 2
         x: 378
@@ -1232,7 +1235,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: doubleshot_idle_right_1
+      name: doubleshot_right_1
       rect:
         serializedVersion: 2
         x: 420
@@ -1240,7 +1243,7 @@ TextureImporter:
         width: 26
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1260,13 +1263,73 @@ TextureImporter:
         width: 22
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: b8b5f8746b6e2454baadf6596f5e152f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstgun_right_1
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 158
+        width: 50
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cf792c1212adcf4783d3d1ca5de606c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstgun_fire_right_1
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 118
+        width: 50
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ac47a4757ae2de40a573efb7c537e7f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon_mount
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 452
+        width: 33
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a3dffa2db28f93459d6a0047cd0dd74
       vertices: []
       indices: 
       edges: []

@@ -9,8 +9,8 @@ public class VehicleController : MonoBehaviour {
     [SerializeField]
     private int power = 128;
     [SerializeField]
-    private int gear = 1;
-    private float gear_timer = 1.0f;
+    private int gear = 4;
+    private float gear_timer = 0.5f;
 
     void Start() {
         vdc = this.GetComponent<VehicleDisplayController>();
@@ -18,22 +18,22 @@ public class VehicleController : MonoBehaviour {
 
     void VehicleInputControl() {
         if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D)) {
-            vdc.RightUp();
+            vdc.UpRight();
             vdc.SetMovingTrue();
             direction = (Vector3.right + Vector3.up).normalized;
         }
         else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A)) {
-            vdc.LeftUp();
+            vdc.UpLeft();
             vdc.SetMovingTrue();
             direction = (Vector3.left + Vector3.up).normalized;
         }
         else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A)) {
-            vdc.LeftDown();
+            vdc.DownLeft();
             vdc.SetMovingTrue();
             direction = (Vector3.left + Vector3.down).normalized;
         }
         else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D)) {
-            vdc.RightDown();
+            vdc.DownRight();
             vdc.SetMovingTrue();
             direction = (Vector3.right + Vector3.down).normalized;
         }

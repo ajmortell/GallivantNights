@@ -12,7 +12,7 @@ public class Bullet : MonoBehaviour {
     [SerializeField]
     private float bullet_speed = 0.0f;
     [SerializeField]
-    public float bullet_damage_mod = 0.0f;
+    public float bullet_damage = 0.0f;
 
     public Vector3 transform_direction;
 
@@ -23,6 +23,7 @@ public class Bullet : MonoBehaviour {
     void Awake() {
         bullet_body = gameObject.GetComponent<Rigidbody2D>();
         StartCoroutine(DestroyBullet());
+        transform_direction = transform.up;
     }
 
     private IEnumerator DestroyBullet() {

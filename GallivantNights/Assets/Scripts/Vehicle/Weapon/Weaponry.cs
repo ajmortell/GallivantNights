@@ -7,6 +7,7 @@ public class Weaponry : MonoBehaviour {
     public List<GameObject> weapons; // ALL POSSIBLE GAME WEAPONS ATTACHED TO VEHICLE OBJ
     private GameObject current_weapon; // THE CURRENTLY ACTIVE WEAPON ON VEHICLE OBJ 
     private GameObject previous_weapon; // PREVIOUS WEAPON
+    public delegate void WeaponDirectionHasChanged();
 
     void Awake () {
 		for(int i=0; i<weapons.Count; i++) {
@@ -14,7 +15,7 @@ public class Weaponry : MonoBehaviour {
             if (active == true) {
                 current_weapon = weapons[i];
                 previous_weapon = current_weapon;
-                Debug.Log("INITIAL WEAPONRY ACTIVE: "+current_weapon.name);
+                //Debug.Log("INITIAL WEAPONRY ACTIVE: "+current_weapon.name);
             }
         }
 	}
@@ -34,12 +35,11 @@ public class Weaponry : MonoBehaviour {
     }
 
     private void CheckWeapon() {
-        Debug.Log("CURRENT WEAPON:  "+current_weapon);
+        //Debug.Log("CURRENT WEAPON:  "+current_weapon);
         if (current_weapon.name != previous_weapon.name) {
-            Debug.Log("** Weapon Has Changed :: CURRENT:  " + current_weapon + " PREVIOUS: " + previous_weapon);
+            //Debug.Log("** Weapon Has Changed :: CURRENT:  " + current_weapon + " PREVIOUS: " + previous_weapon);
             previous_weapon = current_weapon;
-            Debug.Log("NEW WEAPON ACTIVE: " + current_weapon.name + "PREVIOUS:" + previous_weapon);
-
+            //Debug.Log("NEW WEAPON ACTIVE: " + current_weapon.name + "PREVIOUS:" + previous_weapon);
         }
     }
 

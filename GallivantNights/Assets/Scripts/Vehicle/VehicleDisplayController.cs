@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class VehicleDisplayController : MonoBehaviour {
 
-    public Sprite[] up, diag, side, active;
+    public Sprite[] up, right, down, left, up_right, up_left, down_right, down_left, active;
     
     private bool moving = false;
-    private bool flipX = false;
-    private bool flipY = false;
-    private bool flip_weapon_X = false;
-    private bool flip_weapon_Y = false;
+
     private SpriteRenderer vehicle_renderer = null;
     private SpriteRenderer weapon_renderer = null;
     
@@ -28,7 +25,7 @@ public class VehicleDisplayController : MonoBehaviour {
 
         weaponry = weaponry_object.GetComponent<Weaponry>();//
         weaponry_object = weaponry.GetCurrentWeapon();
-        Debug.Log("CURRENT WEAPON: " + weaponry_object.name);
+        //Debug.Log("CURRENT WEAPON: " + weaponry_object.name);
 
         weapon_renderer = weaponry_object.GetComponent<SpriteRenderer>();
         vehicle_renderer = this.GetComponent<SpriteRenderer>();
@@ -46,12 +43,6 @@ public class VehicleDisplayController : MonoBehaviour {
         weapon_object = weaponry.GetCurrentWeapon();
         weapon = weapon_object.GetComponent<Weapon>();
         weapon_renderer.sprite = weapon.weapon_active[animCount];
-
-        vehicle_renderer.flipX = flipX;
-        weapon_renderer.flipX = flip_weapon_X;
-
-        vehicle_renderer.flipY = flipY;
-        weapon_renderer.flipY = flip_weapon_Y;
 
         animTimer -= Time.deltaTime;
         if (animTimer <= 0) {
@@ -82,66 +73,42 @@ public class VehicleDisplayController : MonoBehaviour {
     public void Up() {
         active = up;
         weapon.weapon_active = weapon.weapon_up;
-        flipX = false;
-        flipY = false;
-        flip_weapon_X = false;
-        flip_weapon_Y = false;
+      
     }
     public void Down() {
-        active = up;
-        weapon.weapon_active = weapon.weapon_up;
-        flipX = false;
-        flipY = true;
-        flip_weapon_X = false;
-        flip_weapon_Y = true;
+        active = down;
+        weapon.weapon_active = weapon.weapon_down;
+
     }
     public void Left() {
-        active = side;
-        weapon.weapon_active = weapon.weapon_side;
-        flipX = true;
-        flipY = false;
-        flip_weapon_X = true;
-        flip_weapon_Y = false;
+        active = left;
+        weapon.weapon_active = weapon.weapon_left;
+   
     }
     public void Right() {
-        active = side;
-        weapon.weapon_active = weapon.weapon_side;
-        flipX = false;
-        flipY = false;
-        flip_weapon_X = false;
-        flip_weapon_Y = false;
+        active = right;
+        weapon.weapon_active = weapon.weapon_right;
+
     } 
-    public void RightUp() {
-        active = diag;
-        weapon.weapon_active = weapon.weapon_diag;
-        flipX = false;
-        flipY = false;
-        flip_weapon_X = false;
-        flip_weapon_Y = false;
+    public void UpRight() {
+        active = up_right;
+        weapon.weapon_active = weapon.weapon_up_right;
+
     }
-    public void LeftUp() {
-        active = diag;
-        weapon.weapon_active = weapon.weapon_diag;
-        flipX = true;
-        flipY = false;
-        flip_weapon_X = true;
-        flip_weapon_Y = false;
+    public void UpLeft() {
+        active = up_left;
+        weapon.weapon_active = weapon.weapon_up_left;
+
     }
-    public void LeftDown() {
-        active = diag;
-        weapon.weapon_active = weapon.weapon_diag;
-        flipX = true;
-        flipY = true;
-        flip_weapon_X = true;
-        flip_weapon_Y = true;
+    public void DownLeft() {
+        active = down_left;
+        weapon.weapon_active = weapon.weapon_down_left;
+
     }
-    public void RightDown() {
-        active = diag;
-        weapon.weapon_active = weapon.weapon_diag;
-        flipX = false;
-        flipY = true;
-        flip_weapon_X = false;
-        flip_weapon_Y = true;
+    public void DownRight() {
+        active = down_right;
+        weapon.weapon_active = weapon.weapon_down_right;
+
     }
     
     public void ResetAnimationCount() {

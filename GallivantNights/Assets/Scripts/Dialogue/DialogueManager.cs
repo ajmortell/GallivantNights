@@ -48,6 +48,11 @@ namespace Yarn.Unity.DialogueSystem {
             }
         }
 
+        [YarnCommand("GoToScene")]
+        public void GoToScene(string scene) {
+            GameStateMaster.Instance.ChangeState(ParseStringValue(scene));
+        }
+
         [YarnCommand("ChangeEntityState")]
         public void ChangeEntityState(string _value) {
             current_entity_animator = animated_panel.GetComponent<Animator>();
