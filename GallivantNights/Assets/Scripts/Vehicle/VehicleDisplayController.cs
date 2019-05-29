@@ -34,7 +34,7 @@ public class VehicleDisplayController : MonoBehaviour {
         weapon = weapon_object.GetComponent<Weapon>();
 
         active = up;// TODO: set to previous facing direction 
-        weapon.weapon_active = weapon.weapon_up;
+        //weapon.weapon_active = weapon.weapon_up;
     }
 
     private void AnimateVehicle() {
@@ -42,7 +42,7 @@ public class VehicleDisplayController : MonoBehaviour {
 
         weapon_object = weaponry.GetCurrentWeapon();
         weapon = weapon_object.GetComponent<Weapon>();
-        weapon_renderer.sprite = weapon.weapon_active[animCount];
+        //weapon_renderer.sprite = weapon.weapon_active[animCount];
 
         animTimer -= Time.deltaTime;
         if (animTimer <= 0) {
@@ -72,42 +72,42 @@ public class VehicleDisplayController : MonoBehaviour {
 
     public void Up() {
         active = up;
-        weapon.weapon_active = weapon.weapon_up;
+        //weapon.weapon_active = weapon.weapon_up;
       
     }
     public void Down() {
         active = down;
-        weapon.weapon_active = weapon.weapon_down;
+        //weapon.weapon_active = weapon.weapon_down;
 
     }
     public void Left() {
         active = left;
-        weapon.weapon_active = weapon.weapon_left;
+        //weapon.weapon_active = weapon.weapon_left;
    
     }
     public void Right() {
         active = right;
-        weapon.weapon_active = weapon.weapon_right;
+        //weapon.weapon_active = weapon.weapon_right;
 
     } 
     public void UpRight() {
         active = up_right;
-        weapon.weapon_active = weapon.weapon_up_right;
+        //weapon.weapon_active = weapon.weapon_up_right;
 
     }
     public void UpLeft() {
         active = up_left;
-        weapon.weapon_active = weapon.weapon_up_left;
+        //weapon.weapon_active = weapon.weapon_up_left;
 
     }
     public void DownLeft() {
         active = down_left;
-        weapon.weapon_active = weapon.weapon_down_left;
+        //weapon.weapon_active = weapon.weapon_down_left;
 
     }
     public void DownRight() {
         active = down_right;
-        weapon.weapon_active = weapon.weapon_down_right;
+        //weapon.weapon_active = weapon.weapon_down_right;
 
     }
     
