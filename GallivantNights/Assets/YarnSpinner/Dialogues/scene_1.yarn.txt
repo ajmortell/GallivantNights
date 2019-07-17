@@ -1,9 +1,8 @@
 title: Start
 tags: 
 colorID: 0
-position: 155,202
+position: 155,203
 ---
-<<GoToScene Dialogue 3>>
 <<CreateEntity Dialogue Scenes/scene_0/scene_1 Description: s1A>>
 A clear black night.
 A clear white moon.
@@ -63,5 +62,5 @@ position: 657,402
 <<ChangeEntityType Dialogue NPC>>
 <<ChangeSpeaker Dialogue Jim: ORANGE>>
 Taker er' easy fella.
-
+<<GoToScene Dialogue 3>>
 ===

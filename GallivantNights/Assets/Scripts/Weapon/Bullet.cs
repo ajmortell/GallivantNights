@@ -2,19 +2,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Bullet : MonoBehaviour {
+// CUBE
+public class Bullet : MonoBehaviour, I_PooledObject {
 
     private Rigidbody2D bullet_body;
 
     [SerializeField]
-    private float bullet_decay = 0.0f;
+    private float bullet_decay;
     [SerializeField]
-    private float bullet_speed = 0.0f;
+    private float bullet_speed;
     [SerializeField]
-    public float bullet_damage = 0.0f;
+    public float bullet_damage;
 
     public Vector3 transform_direction;
+
+    public void OnObjectSpawn () {
+    }
 
     public void ChangeBulletDirection(Vector3 dir) {
         transform_direction = dir;

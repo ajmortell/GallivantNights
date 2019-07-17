@@ -21,15 +21,40 @@ public class GameStateMaster : Singleton<GameStateMaster> {
     private enum GameState { STARTUP = 0, TITLE = 1, DIALOGUE = 2, DRIVE = 3, MENU = 4, QUIT = 5 };
     private GameState game_state;
     private GameState current_game_state;
-    private int menu_counter = 0;
-    private int last_scene = 0;
+
+    private int menu_counter = 0;  
     private bool can_open_menu = true;
+
+    //SAVE DATA
+    private int last_weapon_index = 0;
+    private int last_scene = 0;
+
+    public void SetLastWeapon(int idx) {
+        last_weapon_index = idx;
+    }
+    public int GetLastWeapon() {
+        int idx = last_weapon_index;
+        return idx;
+    }
+    public void SetLastScene(int scene_) {
+        last_scene = scene_;
+    }
+    public int GetLastScene() {
+        int scene_ = last_scene;
+        return scene_;
+    }
 
     public override void Awake() {
         base.Awake();
-        game_state = GameState.STARTUP;
-        current_game_state = game_state;
-        StartCoroutine(Startup());
+        if(SceneManager.GetActiveScene().buildIndex == 0) {
+            game_state = GameState.STARTUP;
+            current_game_state = game_state;
+            StartCoroutine(Startup());      
+        } else {
+            game_state = current_game_state;
+            current_game_state = game_state;
+            //StartCoroutine(Startup());
+        }      
     }
 
     // STATE METHODS //////////////////////////////////////////////////////////
@@ -136,24 +161,24 @@ public class GameStateMaster : Singleton<GameStateMaster> {
     }
 
     public void Save() {
-        //BinaryFormatter formatter = new BinaryFormatter();
-        //FileStream file = File.Create(Application.persistentDataPath + "/playerSaveData.dat");
+        BinaryFormatter formatter = new BinaryFormatter();
+        FileStream file = File.Create(Application.persistentDataPath + "/playerSaveData.dat");
 
-        //SceneData data = new SceneData();
-        //data.SceneId = lastScene;
+        PlayerData data = new PlayerData();
+        data.LastWeaponIndex = last_weapon_index;
 
-        //formatter.Serialize(file, data);
-        //file.Close();
+        formatter.Serialize(file, data);
+        file.Close();
     }
 
     public void Load() {
-        // if (File.Exists(Application.persistentDataPath + "/playerSaveData.dat")) {
-        //BinaryFormatter formatter = new BinaryFormatter();
-        //FileStream file = File.Open(Application.persistentDataPath + "/playerSaveData.dat", FileMode.Open);
-        //SceneData data = (SceneData)formatter.Deserialize(file);
-        //file.Close();
-        //lastScene = data.SceneId;
-        //}
+        if (File.Exists(Application.persistentDataPath + "/playerSaveData.dat")) {
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/playerSaveData.dat", FileMode.Open);
+            PlayerData data = (PlayerData)formatter.Deserialize(file);
+            file.Close();
+            last_weapon_index = data.LastWeaponIndex;
+        }
     }
 
     public void CheckMenu() {

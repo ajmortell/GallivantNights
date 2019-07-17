@@ -34,6 +34,7 @@ TextureImporter:
     21300058: playerVehicle_sheet_512_01_29
     21300060: playerVehicle_sheet_512_01_30
     21300062: playerVehicle_sheet_512_01_31
+    21300064: weapon_mount_1
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -762,6 +763,26 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 2c14eb274f5b02f49b54e58a142aeb89
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon_mount_1
+      rect:
+        serializedVersion: 2
+        x: 981
+        y: 986
+        width: 29
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df62b78b656d6f54d8df179da5b782ee
       vertices: []
       indices: 
       edges: []

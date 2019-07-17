@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class Weaponry : MonoBehaviour {
 
-    public List<GameObject> weapons; // ALL POSSIBLE GAME WEAPONS ATTACHED TO VEHICLE OBJ
+    public List<GameObject> weapons; // ALL POSSIBLE GAME WEAPONS ATTACHED TO VEHICLE/WEAPONRY OBJ
     private GameObject current_weapon; // THE CURRENTLY ACTIVE WEAPON ON VEHICLE OBJ 
     private GameObject previous_weapon; // PREVIOUS WEAPON
-    public delegate void WeaponDirectionHasChanged();
+
+    private int weapon_index = 0;
 
     void Awake () {
-		for(int i=0; i<weapons.Count; i++) {
+        current_weapon = weapons[GameStateMaster.Instance.GetLastWeapon()];
+
+        for (int i=0; i<weapons.Count; i++) {
             bool active = weapons[i].activeInHierarchy;
             if (active == true) {
                 current_weapon = weapons[i];
                 previous_weapon = current_weapon;
-                //Debug.Log("INITIAL WEAPONRY ACTIVE: "+current_weapon.name);
             }
         }
 	}
@@ -34,16 +36,12 @@ public class Weaponry : MonoBehaviour {
         current_weapon = new_weapon;
     }
 
-    private void CheckWeapon() {
-        //Debug.Log("CURRENT WEAPON:  "+current_weapon);
+    private void ChangeWeapon() {  
         if (current_weapon.name != previous_weapon.name) {
-            //Debug.Log("** Weapon Has Changed :: CURRENT:  " + current_weapon + " PREVIOUS: " + previous_weapon);
             previous_weapon = current_weapon;
-            //Debug.Log("NEW WEAPON ACTIVE: " + current_weapon.name + "PREVIOUS:" + previous_weapon);
         }
     }
 
-    void Update () {
-        CheckWeapon();
+    void Update () {      
     }
 }

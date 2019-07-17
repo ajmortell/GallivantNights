@@ -1,37 +1,29 @@
 fileFormatVersion: 2
-guid: 5e23009b07c7f3d4e8657f8591a8bd37
+guid: acf2047c793dfd34ba68baf72949aba9
 TextureImporter:
   fileIDToRecycleName:
-    21300000: weapon_up_1
-    21300002: weapon_fire_up_1
-    21300004: weapon_right_1
-    21300006: weapon_fire_right_1
-    21300008: weapon_up_right_1
-    21300010: weapon_fire_up_right_1
-    21300012: weapon_down_1
-    21300014: weapon_fire_down_1
-    21300016: weapon_fire_left_1
-    21300018: weapon_left_1
-    21300020: weapon_down_right_1
-    21300022: weapon_fire_down_right_1
-    21300024: bullet_A_1
-    21300026: bullet_A_2
-    21300028: bullet_B_3
-    21300030: weapon_fire_down_left_1
-    21300032: weapon_down_left_1
-    21300034: weapon_fire_up_left_1
-    21300036: weapon_up_left_1
-    21300038: bullet_A_3
-    21300040: bullet_B_1
-    21300042: bullet_B_2
-    21300044: weapon_up_1
-    21300046: weapon_fire_1
-    21300048: bullet_singlegun_0
-    21300050: bullet_singlegun_1
-    21300052: bullet_singlegun_2
-    21300054: weaponsheet_1_5
-    21300056: weaponsheet_1_6
-    21300058: weaponsheet_1_7
+    21300000: doublegun_sheet_1_0
+    21300002: doublegun_sheet_1_1
+    21300004: doublegun_sheet_1_2
+    21300006: doublegun_sheet_1_3
+    21300008: doublegun_sheet_1_4
+    21300010: doublegun_sheet_1_5
+    21300012: doublegun_sheet_1_6
+    21300014: doublegun_sheet_1_7
+    21300016: doublegun_sheet_1_8
+    21300018: doublegun_sheet_1_9
+    21300020: doublegun_sheet_1_10
+    21300022: doublegun_sheet_1_11
+    21300024: doublegun_sheet_1_12
+    21300026: doublegun_sheet_1_13
+    21300028: doublegun_sheet_1_14
+    21300030: doublegun_sheet_1_15
+    21300032: doublegun_sheet_1_16
+    21300034: doublegun_sheet_1_17
+    21300036: doublegun_sheet_1_18
+    21300038: doublegun_sheet_1_19
+    21300040: doublegun_sheet_1_20
+    21300042: doublegun_sheet_1_21
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -125,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: weapon_up_1
+      name: doublegun_sheet_1_0
       rect:
         serializedVersion: 2
         x: 17
-        y: 459
+        y: 457
         width: 11
-        height: 29
+        height: 30
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,19 +131,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80e7998ca471064469a069b1e5c6b0ab
+      spriteID: 9023dceb94212db458f0824c97ce8610
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: weapon_fire_1
+      name: doublegun_sheet_1_1
       rect:
         serializedVersion: 2
         x: 56
-        y: 459
+        y: 456
         width: 11
-        height: 29
+        height: 30
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,17 +151,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e54fdefbadd7f54ca35adbc3d64c765
+      spriteID: 0ffb270aad663924fb7adee81b17c560
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bullet_singlegun_0
+      name: doublegun_sheet_1_2
       rect:
         serializedVersion: 2
-        x: 91
-        y: 476
+        x: 87
+        y: 473
         width: 3
         height: 10
       alignment: 0
@@ -179,17 +171,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: efd0050b74fb13a40ba107e41dd1ecad
+      spriteID: 79685cd30785e974faef159e4a34835f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bullet_singlegun_1
+      name: doublegun_sheet_1_3
       rect:
         serializedVersion: 2
-        x: 98
-        y: 476
+        x: 94
+        y: 473
         width: 3
         height: 10
       alignment: 0
@@ -199,59 +191,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 29a63fec0c54ef94887550cbb2790c6a
+      spriteID: 5452080b047526841a0420f0ba9fe3e3
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bullet_singlegun_2
-      rect:
-        serializedVersion: 2
-        x: 105
-        y: 476
-        width: 3
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e5c4cc23fe254754f942e254819138ab
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: weaponsheet_1_5
-      rect:
-        serializedVersion: 2
-        x: 90
-        y: 461
-        width: 6
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 38d85847bd611724287ef46ca184007a
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: weaponsheet_1_6
+      name: doublegun_sheet_1_4
       rect:
         serializedVersion: 2
         x: 101
-        y: 461
-        width: 6
-        height: 11
+        y: 473
+        width: 3
+        height: 10
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -259,27 +211,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b40801100b780c74fbdc7183813f2dbc
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: weaponsheet_1_7
-      rect:
-        serializedVersion: 2
-        x: 113
-        y: 461
-        width: 6
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 33eb3bf096bf3f749b1767cad8887238
+      spriteID: 713d65f25f678ad45942af8ab9ed97b1
       vertices: []
       indices: 
       edges: []
@@ -287,7 +219,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 9bf44794d79a62445b216ab56cf6a0d4
+    spriteID: 060f92e855e6c4e4c83759f2e6dc9a46
     vertices: []
     indices: 
     edges: []
