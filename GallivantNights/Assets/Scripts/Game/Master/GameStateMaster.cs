@@ -21,6 +21,7 @@ public class GameStateMaster : Singleton<GameStateMaster> {
     private enum GameState { STARTUP = 0, TITLE = 1, DIALOGUE = 2, DRIVE = 3, MENU = 4, QUIT = 5 };
     private GameState game_state;
     private GameState current_game_state;
+    private bool busy = true; // stop player interactions if doing game setup or loading
 
     private int menu_counter = 0;  
     private bool can_open_menu = true;
@@ -28,6 +29,12 @@ public class GameStateMaster : Singleton<GameStateMaster> {
     //SAVE DATA
     private int last_weapon_index = 0;
     private int last_scene = 0;
+    private int singlegun_bullets = 0;
+    private int doublegun_bullets = 0;
+    private int burstgun_bullets = 0;
+    private int heavygun_bullets = 0;
+    private int mortargun_bullets = 0;
+    private int beamgun_bullets = 0;
 
     public void SetLastWeapon(int idx) {
         last_weapon_index = idx;
@@ -53,7 +60,7 @@ public class GameStateMaster : Singleton<GameStateMaster> {
         } else {
             game_state = current_game_state;
             current_game_state = game_state;
-            //StartCoroutine(Startup());
+         
         }      
     }
 
@@ -166,6 +173,12 @@ public class GameStateMaster : Singleton<GameStateMaster> {
 
         PlayerData data = new PlayerData();
         data.LastWeaponIndex = last_weapon_index;
+        data.SinglegunBullets = singlegun_bullets;
+        data.DoublegunBullets = doublegun_bullets;
+        data.BurstgunBullets = burstgun_bullets;
+        data.HeavygunBullets = heavygun_bullets;
+        data.MortargunBullets = mortargun_bullets;
+        data.BeamgunBullets = beamgun_bullets;
 
         formatter.Serialize(file, data);
         file.Close();
@@ -178,6 +191,12 @@ public class GameStateMaster : Singleton<GameStateMaster> {
             PlayerData data = (PlayerData)formatter.Deserialize(file);
             file.Close();
             last_weapon_index = data.LastWeaponIndex;
+            singlegun_bullets = data.SinglegunBullets;
+            doublegun_bullets = data.DoublegunBullets;
+            burstgun_bullets = data.BurstgunBullets;
+            heavygun_bullets = data.HeavygunBullets;
+            mortargun_bullets = data.MortargunBullets;
+            beamgun_bullets = data.BeamgunBullets;
         }
     }
 

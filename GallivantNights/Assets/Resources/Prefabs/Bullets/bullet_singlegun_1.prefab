@@ -20,8 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4424039288872802}
   - component: {fileID: 212716967051763010}
-  - component: {fileID: 114523426670491518}
   - component: {fileID: 50626171978285924}
+  - component: {fileID: 114523426670491518}
   m_Layer: 0
   m_Name: bullet_singlegun_1
   m_TagString: Untagged
@@ -55,7 +55,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet_decay: 0.1
-  bullet_speed: 3000
+  bullet_speed: 2000
   bullet_damage: 0
   transform_direction: {x: 0, y: 0, z: 0}
 --- !u!212 &212716967051763010

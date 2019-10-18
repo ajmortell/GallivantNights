@@ -2,8 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-// CUBE
-public class Bullet : MonoBehaviour, I_PooledObject {
+
+public class Bullet : MonoBehaviour {
 
     private Rigidbody2D bullet_body;
 
@@ -15,15 +15,13 @@ public class Bullet : MonoBehaviour, I_PooledObject {
     public float bullet_damage;
 
     public Vector3 transform_direction;
-
+    
     public void OnObjectSpawn () {
     }
 
-    public void ChangeBulletDirection(Vector3 dir) {
-        transform_direction = dir;
-    }
+   
 
-    void Awake() {
+    private void Awake() {
         bullet_body = gameObject.GetComponent<Rigidbody2D>();
         StartCoroutine(DestroyBullet());
         transform_direction = transform.up;
@@ -37,6 +35,12 @@ public class Bullet : MonoBehaviour, I_PooledObject {
 
     private void Update() {
         bullet_body.velocity = transform_direction * bullet_speed;
+        //RaycastHit hit;
+        //if (Physics.Raycast(transform.position, transform.forward, out hit))
+        //{
+        //    Debug.Log("HIT SOMETHING");
+        //    //Instantiate(explosion, hit.point, Quaternion.LookRotation(hit.normal));
+        //    /* DoSlowMotion() */
+        //}
     }
-
 }

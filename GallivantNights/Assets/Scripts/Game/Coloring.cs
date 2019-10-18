@@ -45,11 +45,11 @@ public class Coloring : MonoBehaviour {
     }
 
     public Color32 SelectColor (string _color) {
-        Color selected_color = new Color32(255, 12, 0, 255);
+        Color selected_color = new Color32(0, 0, 0, 255);
         
         switch (_color) {
             case "RED":
-                selected_color = new Color32(255, 12, 0, 255);
+                selected_color = RED;
                 break;
             case "YELLOW":
                 selected_color = YELLOW;

@@ -5,11 +5,12 @@ using UnityEngine;
 [System.Serializable]
 public class Weapon : MonoBehaviour {
 
-    public Weaponry weaponry;
     public Transform bullet_spawn;
     public GameObject bullet_prefab;
-    private ObjectPooler object_pooler;
 
+    private enum WeaponClass { NONE, SINGLE, DOUBLE, BURST, HEAVY, MORTAR, BEAM };
+    [SerializeField]
+    private WeaponClass weapon_class;
     [SerializeField]
     private float weapon_damage; 
     private int ammo;
@@ -23,6 +24,7 @@ public class Weapon : MonoBehaviour {
     private float reload_speed;
     [SerializeField]
     private int bullet_count;
+    public Canvas currentCanvas;
 
     private bool is_locked = true;
     private float next_fire;
@@ -32,15 +34,12 @@ public class Weapon : MonoBehaviour {
         ammo = max_ammo;
     }
 
-    private void Start() {
-        object_pooler = ObjectPooler.Pooler_Instance;
-    }
-
     void Fire() {
         ammo--;
-        //object_pooler.SpawnFromPool("bullet_singlegun_1", bullet_spawn.transform.position, bullet.transform.rotation);
+        
         GameObject bullet_ = Instantiate(bullet_prefab, bullet_spawn.position, bullet_spawn.rotation);
         bullet = bullet_.GetComponent<Bullet>();
+        bullet.transform.SetParent(currentCanvas.transform, false);//1/ Set to Canvas
         weapon_damage += bullet.bullet_damage;
         next_fire = Time.time + fire_rate;
     }

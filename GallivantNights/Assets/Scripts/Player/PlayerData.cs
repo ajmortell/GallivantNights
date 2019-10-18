@@ -13,12 +13,16 @@ public class PlayerData {
     public int LastSceneID;
     [XmlElement("SinglegunBullets")]
     public int SinglegunBullets;
-    [XmlElement("DoubleshotBullets")]
-    public int DoubleshotBullets;
+    [XmlElement("DoublegunBullets")]
+    public int DoublegunBullets;
     [XmlElement("BurstgunBullets")]
     public int BurstgunBullets;
-    [XmlElement("CanonBullets")]
-    public int CanonBullets;
+    [XmlElement("HeavygunBullets")]
+    public int HeavygunBullets;
+    [XmlElement("MortargunBullets")]
+    public int MortargunBullets;
+    [XmlElement("BeamgunBullets")]
+    public int BeamgunBullets;
 
     public PlayerData() {
     }
