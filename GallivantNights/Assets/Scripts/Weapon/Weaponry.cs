@@ -11,7 +11,7 @@ public class Weaponry : MonoBehaviour {
     private int weapon_index = 0;
 
     void Awake () {
-        current_weapon = weapons[GameStateMaster.Instance.GetLastWeapon()];
+        //current_weapon = weapons[PlayerDataManager.Instance.GetLastWeapon()];
 
         for (int i=0; i<weapons.Count; i++) {
             bool active = weapons[i].activeInHierarchy;
@@ -37,7 +37,7 @@ public class Weaponry : MonoBehaviour {
         for (int i = 0; i < weapons.Count; i++) {
             bool active = weapons[i].activeInHierarchy;
             if (active == true) {
-                Debug.Log("WEAPON ACTIVE: " + weapons[i].name);
+                //Debug.Log("WEAPON ACTIVE: " + weapons[i].name);
                 weapons[i].SetActive(false);
             }
         }

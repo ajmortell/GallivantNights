@@ -2,15 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.IO;
-using System;
 
 #region Script Details
 /*
  0. STARTUP - serves as a load point for game initialization. Autoloads Title screen
- 1. TITLE - Contains splash animation and start screen. Press start to transition to next stage of game states
- 2. GAME - This is where animation and dialogue take place
+ 1. TITLE - Contains splash animation and start screen. Pressing start transitions to next state
+ 2. GAME - This is where animation and dialogue takes place
  3. DRIVE - This is when the player has an encounter with his vehicle
  4. MENU - Pause game when entering menu. Unpause on exit.
  5. QUIT - Bring up a menu asking if play wants to quit. Selecting yes exits application
@@ -18,38 +15,14 @@ using System;
 #endregion
 
 public class GameStateMaster : Singleton<GameStateMaster> {
-    private enum GameState { STARTUP = 0, TITLE = 1, DIALOGUE = 2, DRIVE = 3, MENU = 4, QUIT = 5 };
+
+    private enum GameState { STARTUP = 0, TITLE = 1, DIALOGUE = 2, DRIVE = 3, MENU = 4, CUT = 5, QUIT = 6 };
     private GameState game_state;
     private GameState current_game_state;
     private bool busy = true; // stop player interactions if doing game setup or loading
 
     private int menu_counter = 0;  
     private bool can_open_menu = true;
-
-    //SAVE DATA
-    private int last_weapon_index = 0;
-    private int last_scene = 0;
-    private int singlegun_bullets = 0;
-    private int doublegun_bullets = 0;
-    private int burstgun_bullets = 0;
-    private int heavygun_bullets = 0;
-    private int mortargun_bullets = 0;
-    private int beamgun_bullets = 0;
-
-    public void SetLastWeapon(int idx) {
-        last_weapon_index = idx;
-    }
-    public int GetLastWeapon() {
-        int idx = last_weapon_index;
-        return idx;
-    }
-    public void SetLastScene(int scene_) {
-        last_scene = scene_;
-    }
-    public int GetLastScene() {
-        int scene_ = last_scene;
-        return scene_;
-    }
 
     public override void Awake() {
         base.Awake();
@@ -60,14 +33,13 @@ public class GameStateMaster : Singleton<GameStateMaster> {
         } else {
             game_state = current_game_state;
             current_game_state = game_state;
-         
         }      
     }
 
     // STATE METHODS //////////////////////////////////////////////////////////
 
     IEnumerator Startup() {
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(2.5f);
         game_state = GameState.STARTUP;
         StartCoroutine(Title());
     }
@@ -91,6 +63,11 @@ public class GameStateMaster : Singleton<GameStateMaster> {
     IEnumerator Menu() {
         yield return null;
         StartCoroutine(TransitionScene(4));
+    }
+
+    IEnumerator Cut() {
+        yield return null;
+        StartCoroutine(TransitionScene(5));
     }
 
     IEnumerator Quit() {
@@ -130,6 +107,9 @@ public class GameStateMaster : Singleton<GameStateMaster> {
             case GameState.MENU:
                 StartCoroutine(Menu());
                 break;
+            case GameState.CUT:
+                StartCoroutine(Cut());
+                break;
             case GameState.QUIT:
                 StartCoroutine(Quit());
                 break;
@@ -154,6 +134,9 @@ public class GameStateMaster : Singleton<GameStateMaster> {
                 game_state = GameState.MENU;
                 break;
             case 5:
+                game_state = GameState.CUT;
+                break;
+            case 6:
                 game_state = GameState.QUIT;
                 break;
         }
@@ -167,52 +150,16 @@ public class GameStateMaster : Singleton<GameStateMaster> {
         }
     }
 
-    public void Save() {
-        BinaryFormatter formatter = new BinaryFormatter();
-        FileStream file = File.Create(Application.persistentDataPath + "/playerSaveData.dat");
-
-        PlayerData data = new PlayerData();
-        data.LastWeaponIndex = last_weapon_index;
-        data.SinglegunBullets = singlegun_bullets;
-        data.DoublegunBullets = doublegun_bullets;
-        data.BurstgunBullets = burstgun_bullets;
-        data.HeavygunBullets = heavygun_bullets;
-        data.MortargunBullets = mortargun_bullets;
-        data.BeamgunBullets = beamgun_bullets;
-
-        formatter.Serialize(file, data);
-        file.Close();
-    }
-
-    public void Load() {
-        if (File.Exists(Application.persistentDataPath + "/playerSaveData.dat")) {
-            BinaryFormatter formatter = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + "/playerSaveData.dat", FileMode.Open);
-            PlayerData data = (PlayerData)formatter.Deserialize(file);
-            file.Close();
-            last_weapon_index = data.LastWeaponIndex;
-            singlegun_bullets = data.SinglegunBullets;
-            doublegun_bullets = data.DoublegunBullets;
-            burstgun_bullets = data.BurstgunBullets;
-            heavygun_bullets = data.HeavygunBullets;
-            mortargun_bullets = data.MortargunBullets;
-            beamgun_bullets = data.BeamgunBullets;
-        }
-    }
-
     public void CheckMenu() {
         if (Input.GetKeyDown("m")) {
-
             if (can_open_menu == true) {
                 can_open_menu = true;
                 Debug.Log("MENU OPEN");
-
             } else {
                 can_open_menu = true;
                 Debug.Log("MENU CLOSED");
             }
         }
-
     }
 
     void FixedUpdate() {

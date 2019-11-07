@@ -39,7 +39,7 @@ public class EnemySight : MonoBehaviour {
 
         for (int i = 0; i < hits.Count; i++) {
             if (hits[i].collider != null) {
-                Debug.Log(" H I T ");
+                //Debug.Log(" H I T ");
                 return;
             } 
         }   

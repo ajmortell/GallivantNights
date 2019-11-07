@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PlayerData xmlns:xsi="http:www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http:www.w3.org/2001/XMLSchema-instance">
+
+  <LastWeaponIndex>0</LastWeaponIndex>
+  <Progress>0.0.0.0</Progress>
+
+  <BulletData>
+    <Bullet>
+      <BulletID>1</BulletID>
+      <BulletName>Singlegun</BulletName>
+      <BulletCache>0</BulletCache>
+    </Bullet>
+
+    <Bullet>
+      <BulletID>2</BulletID>
+      <BulletName>Doublegun</BulletName>
+      <BulletCache>0</BulletCache>
+    </Bullet>
+
+    <Bullet>
+      <BulletID>3</BulletID>
+      <BulletName>Burstgun</BulletName>
+      <BulletCache>0</BulletCache>
+    </Bullet>
+
+    <Bullet>
+      <BulletID>4</BulletID>
+      <BulletName>Heavygun</BulletName>
+      <BulletCache>0</BulletCache>
+    </Bullet>
+
+    <Bullet>
+      <BulletID>5</BulletID>
+      <BulletName>Mortargun</BulletName>
+      <BulletCache>0</BulletCache>
+    </Bullet>
+
+    <Bullet>
+      <BulletID>6</BulletID>
+      <BulletName>Beamgun</BulletName>
+      <BulletCache>0</BulletCache>
+    </Bullet>
+    
+  </BulletData>
+
+  <NextLevelList>
+    
+    <NextLevel>0</NextLevel>
+    <NextLevel>1500</NextLevel>
+    <NextLevel>3000</NextLevel>
+    <NextLevel>4500</NextLevel>
+    <NextLevel>6000</NextLevel>
+
+    <NextLevel>7500</NextLevel>
+    <NextLevel>9000</NextLevel>
+    <NextLevel>10500</NextLevel>
+    <NextLevel>12000</NextLevel>
+    <NextLevel>13500</NextLevel>
+
+    <NextLevel>15000</NextLevel>
+    <NextLevel>16500</NextLevel>
+    <NextLevel>18000</NextLevel>
+    <NextLevel>19500</NextLevel>
+    <NextLevel>21000</NextLevel>
+
+    <NextLevel>22500</NextLevel>
+    <NextLevel>24000</NextLevel>
+    <NextLevel>25500</NextLevel>
+    <NextLevel>27000</NextLevel>
+    <NextLevel>28500</NextLevel>
+
+    <NextLevel>30000</NextLevel>
+    <NextLevel>31500</NextLevel>
+    <NextLevel>33000</NextLevel>
+    <NextLevel>34500</NextLevel>
+    <NextLevel>36000</NextLevel>
+
+    <NextLevel>37500</NextLevel>
+    <NextLevel>39000</NextLevel>
+    <NextLevel>40500</NextLevel>
+    <NextLevel>42000</NextLevel>
+    <NextLevel>0</NextLevel>
+
+    <NextLevel>0</NextLevel>
+    <NextLevel>0</NextLevel>
+    <NextLevel>0</NextLevel>
+    <NextLevel>0</NextLevel>
+    <NextLevel>0</NextLevel>
+
+    <NextLevel>0</NextLevel>
+    <NextLevel>0</NextLevel>
+    <NextLevel>0</NextLevel>
+    <NextLevel>0</NextLevel>
+    <NextLevel>0</NextLevel>
+
+    <NextLevel>0</NextLevel>
+    <NextLevel>0</NextLevel>
+    <NextLevel>0</NextLevel>
+    <NextLevel>0</NextLevel>
+    <NextLevel>0</NextLevel>
+
+    <NextLevel>0</NextLevel>
+    <NextLevel>0</NextLevel>
+    <NextLevel>0</NextLevel>
+    <NextLevel>0</NextLevel>
+    <NextLevel>0</NextLevel>
+    
+  </NextLevelList>
+
+</PlayerData>

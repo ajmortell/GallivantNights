@@ -61,7 +61,7 @@ public class Weapon : MonoBehaviour {
             Fire();
         }
 
-        if (Input.GetButtonDown("Fire2") && Time.time > next_fire) {
+        if (Input.GetKey(KeyCode.R) && Time.time > next_fire) {
             if(bullets!=0 && ammo == 0) {
                 Debug.Log(" _____ RE-LOADING ...");
                 Reload();

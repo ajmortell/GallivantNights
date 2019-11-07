@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PlayerData xmlns:xsi="http:www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http:www.w3.org/2001/XMLSchema-instance">
+
+  <LastWeaponIndex>0</LastWeaponIndex>
+  <Progress>0.0.0.0</Progress>
+
+  <BulletData>
+    <Bullet>
+      <BulletID>1</BulletID>
+      <BulletName>Singlegun</BulletName>
+      <Bullets>50</Bullets>
+    </Bullet>
+
+    <Bullet>
+      <BulletID>2</BulletID>
+      <BulletName>Doublegun</BulletName>
+      <Bullets>100</Bullets>
+    </Bullet>
+
+    <Bullet>
+      <BulletID>3</BulletID>
+      <BulletName>Burstgun</BulletName>
+      <Bullets>25</Bullets>
+    </Bullet>
+
+    <Bullet>
+      <BulletID>4</BulletID>
+      <BulletName>Heavygun</BulletName>
+      <Bullets>200</Bullets>
+    </Bullet>
+
+    <Bullet>
+      <BulletID>5</BulletID>
+      <BulletName>Mortargun</BulletName>
+      <Bullets>5</Bullets>
+    </Bullet>
+
+    <Bullet>
+      <BulletID>6</BulletID>
+      <BulletName>Beamgun</BulletName>
+      <Bullets>3</Bullets>
+    </Bullet>
+
+  </BulletData>
+</PlayerData>

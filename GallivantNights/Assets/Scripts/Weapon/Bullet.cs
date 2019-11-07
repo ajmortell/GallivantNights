@@ -29,7 +29,7 @@ public class Bullet : MonoBehaviour {
 
     private IEnumerator DestroyBullet() {
         yield return new WaitForSeconds(bullet_decay);
-        Debug.Log("DESTROYED:  " + bullet_decay);
+        //Debug.Log("DESTROYED:  " + bullet_decay);
         Destroy(gameObject);
     }
 

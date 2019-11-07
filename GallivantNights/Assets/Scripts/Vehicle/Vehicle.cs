@@ -5,11 +5,11 @@ using UnityEngine;
 public class Vehicle : MonoBehaviour {
 
     private Weaponry weaponry;
-    private Rigidbody2D body;
+    //private Rigidbody2D body;
 
     // Use this for initialization
     private void Awake() {
-        body = this.GetComponent<Rigidbody2D>();
+        //body = this.GetComponent<Rigidbody2D>();
     }
     
     // Update is called once per frame
