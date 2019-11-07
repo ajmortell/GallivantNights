@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d775efb778c6588468b41952c1908383, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet_decay: 0.1
-  bullet_speed: 2000
+  bullet_decay: 0.3
+  bullet_speed: 1000
   bullet_damage: 0
   transform_direction: {x: 0, y: 0, z: 0}

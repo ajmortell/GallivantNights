@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class VehicleController : MonoBehaviour {
 
+    InputManager input_manager;
     private float power = 128.0f;
     private int gear = 1;
     private float gear_timer = 0.0f;
@@ -19,7 +20,6 @@ public class VehicleController : MonoBehaviour {
     Quaternion Left;
     Quaternion UpLeft;
 
-    Vector2 input_vector;
     Vector2 up_vector;
     Vector2 up_right_vector;
     Vector2 right_vector;
@@ -43,6 +43,8 @@ public class VehicleController : MonoBehaviour {
     private Rigidbody2D rb2D;
 
     void Awake() {
+        input_manager = GetComponent<InputManager>();
+        #region Quaternions and Vectors
         Up = Quaternion.Euler(0.0f, 0.0f, 0.0f);
         UpRight = Quaternion.Euler(0.0f, 0.0f, -45.0f);
         Right = Quaternion.Euler(0.0f, 0.0f, -90.0f);
@@ -52,7 +54,6 @@ public class VehicleController : MonoBehaviour {
         Left = Quaternion.Euler(0.0f, 0.0f, 90.0f);
         UpLeft = Quaternion.Euler(0.0f, 0.0f, 45.0f);
 
-        input_vector = new Vector2(0.0f, 0.0f);
         up_vector = new Vector2(0.0f, 1.0f);
         up_right_vector = new Vector2(1.0f, 1.0f);
         right_vector = new Vector2(1.0f, 0.0f);
@@ -61,9 +62,10 @@ public class VehicleController : MonoBehaviour {
         down_left_vector = new Vector2(-1.0f, -1.0f);
         left_vector = new Vector2(-1.0f, 0.0f);
         up_left_vector = new Vector2(-1.0f, 1.0f);
-
+        #endregion
     }
 
+    #region VEHICLE DIRECTIONAL MOVEMENT FUNCTIONS
     void GoUp() {
         current_face_direction = FaceDirections.W;
         transform.rotation = Up;
@@ -118,207 +120,63 @@ public class VehicleController : MonoBehaviour {
         transform.rotation = UpLeft;
         direction = (Vector3.forward + Vector3.up).normalized;
     }
+    #endregion
 
-    public float CurrenHorizontalInput {
+    private float LeftTriggerInput {
         get {
-            return Input.GetAxisRaw("Horizontal_DPAD");
+            return input_manager.LeftTriggerInput;
         }
     }
 
-    public float CurrenVerticalInput {
+    private float RightTriggerInput {
         get {
-            return Input.GetAxisRaw("Vertical_DPAD");
+            return input_manager.RightTriggerInput;
         }
     }
 
-    public Vector2 CurrentInput {
-        get {
-            return new Vector2(Input.GetAxisRaw("Horizontal_DPAD"),
-                Input.GetAxisRaw("Vertical_DPAD"));
+    private Vector2 CurrentInput {
+        get
+        {
+            return input_manager.CurrentInput;
         }
+        
     }
    
-    /*
-     
-         CURRENT ISSUES: The new controller support is causing errors with
-         the current means of rotating the graphic. Possible temp solution wouold be
-         to rotate the car/weapons as a seperate child of the movement object ie
-         create a game object the movies and rotate the car like a turret. May look 
-         like shit though so we'll see.
-         */
     void VehicleInput() {
    
         previous_face_direction = current_face_direction;
 
-        if (input == up_vector)
-        {
+        if (input == up_vector) {
             GoUp();
-        }
-        else if (input == up_right_vector)
-        {
+        } else if (input == up_right_vector) {
             GoUpRight();
-        }
-        else if (input == right_vector)
-        {
+        } else if (input == right_vector) {
             GoRight();
-        }
-        else if (input == down_right_vector)
-        {
+        } else if (input == down_right_vector) {
             GoDownRight();
-        }
-        else if (input == down_vector)
-        {
+        } else if (input == down_vector) {
             GoDown();
-        }
-        else if (input == down_left_vector)
-        {
+        } else if (input == down_left_vector) {
             GoDownLeft();
-        }
-        else if (input == left_vector)
-        {
+        } else if (input == left_vector) {
             GoLeft();
-        }
-        else if (input == up_left_vector)
-        {
+        } else if (input == up_left_vector) {
             GoUpLeft();
+        } else {
+            face_direction = current_face_direction;           
         }
-        else
-        {
-            face_direction = current_face_direction;
-            
-        }
-
     }
-
-    //void VehicleInputOLD() {
-    //    previous_face_direction = current_face_direction;
-    //    if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D)) {
-    //        GoUpRight();
-    //    }
-    //    else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A)) {
-    //        GoUpLeft();
-    //    }
-    //    else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A)) {
-    //        GoDownLeft();
-    //    }
-    //    else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D)) {
-    //        GoDownRight();
-    //    }
-    //    else if (Input.GetKey(KeyCode.W)) {
-    //        GoUp();
-    //    }
-    //    else if (Input.GetKey(KeyCode.S)) {
-    //        GoDown();
-    //    }
-    //    else if (Input.GetKey(KeyCode.A)) {
-    //        GoLeft();
-    //    }
-    //    else if (Input.GetKey(KeyCode.D)) {
-    //        GoRight();
-    //    } else {
-    //        face_direction = current_face_direction;
-    //        Debug.Log("NOT MOVING IN SPECIFIC DIRECTION: " + current_face_direction);
-    //        //direction = Vector3.zero;
-    //        //gear = 1;
-    //    }      
-    //}
-
-    //void VehicleInput() {
-    //    previous_face_direction = current_face_direction;
-    //    if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D)) {
-    //        if (current_face_direction != FaceDirections.WA && current_face_direction != FaceDirections.SA &&
-    //            current_face_direction != FaceDirections.SD && current_face_direction != FaceDirections.A) {
-    //            GoUpRight();
-    //        } else {
-    //            Debug.Log("NOT IN CORRECT DIRECTION: " + current_face_direction);
-    //            return;
-    //        }
-    //    }
-    //    else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A)){
-    //        if (current_face_direction != FaceDirections.WD && current_face_direction != FaceDirections.SA &&
-    //            current_face_direction != FaceDirections.SD && current_face_direction != FaceDirections.D) {
-    //            GoUpLeft();
-    //        } else {
-    //            Debug.Log("NOT IN CORRECT DIRECTION: " + current_face_direction);
-    //            return;
-    //        }
-    //    }
-    //    else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A)) {
-    //        if (current_face_direction != FaceDirections.WA && current_face_direction != FaceDirections.SD &&
-    //            current_face_direction != FaceDirections.WD && current_face_direction != FaceDirections.W &&
-    //            current_face_direction != FaceDirections.D) {
-    //            GoDownLeft();
-    //        } else {
-    //            Debug.Log("NOT IN CORRECT DIRECTION: " + current_face_direction);
-    //            return;
-    //        }
-    //    }
-    //    else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D)) {
-    //        if (current_face_direction != FaceDirections.WA && current_face_direction != FaceDirections.SA &&
-    //            current_face_direction != FaceDirections.WD && current_face_direction != FaceDirections.W &&
-    //            current_face_direction != FaceDirections.A) {
-    //            GoDownRight();
-    //        } else {
-    //            Debug.Log("NOT IN CORRECT DIRECTION: " + current_face_direction);
-    //            return;
-    //        }
-    //    }
-    //    else if (Input.GetKey(KeyCode.W)) {
-    //        if (current_face_direction != FaceDirections.SA && current_face_direction != FaceDirections.D &&
-    //            current_face_direction != FaceDirections.SD && current_face_direction != FaceDirections.A &&
-    //            current_face_direction != FaceDirections.S) {
-    //            GoUp();
-    //        } else {
-    //            Debug.Log("NOT IN CORRECT DIRECTION: " + current_face_direction);
-    //            return;
-    //        }
-    //    }
-    //    else if (Input.GetKey(KeyCode.S)) {
-    //        if (current_face_direction != FaceDirections.WA && current_face_direction != FaceDirections.W &&
-    //            current_face_direction != FaceDirections.WD && current_face_direction != FaceDirections.A &&
-    //            current_face_direction != FaceDirections.D) {
-    //            GoDown();
-    //        } else {
-    //            Debug.Log("NOT IN CORRECT DIRECTION: " + current_face_direction);
-    //            return;
-    //        }
-    //    }
-    //    else if (Input.GetKey(KeyCode.A)) {
-    //        if (current_face_direction != FaceDirections.WD && current_face_direction != FaceDirections.D &&
-    //            current_face_direction != FaceDirections.SD && current_face_direction != FaceDirections.S &&
-    //            current_face_direction != FaceDirections.W) {
-    //            GoLeft();
-    //        } else {
-    //            Debug.Log("NOT IN CORRECT DIRECTION: " + current_face_direction);
-    //            return;
-    //        }
-    //    }
-    //    else if (Input.GetKey(KeyCode.D)) {
-    //        if (current_face_direction != FaceDirections.WA && current_face_direction != FaceDirections.W &&
-    //            current_face_direction != FaceDirections.SA && current_face_direction != FaceDirections.S &&
-    //            current_face_direction != FaceDirections.A) {
-    //            GoRight();
-    //        } else {
-    //            face_direction = current_face_direction;
-    //            Debug.Log("NOT MOVING IN SPECIFIC DIRECTION: " + current_face_direction);
-    //            //direction = Vector3.zero;
-    //            //gear = 1;
-    //        }
-    //    }
-    //}
 
     void MoveCar() {
 
         input = CurrentInput;
-        //CurrentInput;
         transform.Translate(direction * (power * gear) * Time.deltaTime);
-        //transform.position = new Vector2(transform.position.x, transform.position.y);
-        //Debug.Log("CURRENT INPUT: " + CurrentInput);
+        transform.position = new Vector3(transform.position.x, transform.position.y, 0);
         //LogMovementData();
     }
 
     void GearControl() {
-        if (gear < 9) {
+        if (gear < 6) {
             gear_timer -= Time.deltaTime;
             if (gear_timer <= 0) {
                 gear++;
@@ -332,8 +190,19 @@ public class VehicleController : MonoBehaviour {
             gear_timer -= Time.deltaTime;
             if (gear_timer <= 0) {
                 gear--;
-                gear_timer = 0.5f;
+                gear_timer = 0.2f;
             }
+        }
+    }
+
+    void GearInput() {
+        if (RightTriggerInput == 1) {
+            GearControl();
+        } else if (RightTriggerInput == 0) {
+        }
+        if (LeftTriggerInput == 1) {
+            DownShiftControl();
+        } else if (LeftTriggerInput == 0) {
         }
     }
 
@@ -356,18 +225,8 @@ public class VehicleController : MonoBehaviour {
     void FixedUpdate() {
         VehicleInput();
         MoveCar();
-        if (Input.GetKey(KeyCode.E)) {
-            GearControl();
-        }
-        else if (Input.GetKeyUp(KeyCode.E)) {
+        GearInput();
 
-        }
-        if (Input.GetKey(KeyCode.Q)) {
-            DownShiftControl();
-        }
-        else if (Input.GetKeyUp(KeyCode.Q)) {
 
-        }
-       
     }
 }
